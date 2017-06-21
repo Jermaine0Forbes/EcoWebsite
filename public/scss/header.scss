@@ -1,0 +1,54 @@
+/********************
+    HEADER
+********************/
+
+// #top-nav
+
+#top-nav {
+
+    .address,
+    .social-links,
+    .phone{
+        color:$grey;
+        font-size:14px;
+        text-transform:capitalize;
+        strong{
+            color:$black;
+        }
+    }
+
+    .social-links{
+        a{
+            color:$grey;
+            transition:all 0.3s;
+            &:hover{
+                color:$two
+            }
+        }
+    }
+
+
+
+
+
+}
+
+// #bottom-nav
+
+#bottom-nav{
+
+    .navbar-nav{
+
+        a{
+            color:$black;
+        }
+    }
+}
+
+// #logo
+#logo{
+    font-weight:300;
+    span{
+        font-weight:bold;
+    }
+}

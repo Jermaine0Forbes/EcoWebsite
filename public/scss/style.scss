@@ -1,0 +1,15 @@
+$blue: #121E88;
+$blue2: #99CEF8;
+$blue3: #B9E0F1;
+$green: #4FC0A9;
+$white: #FEFAF7;
+$black: #333333;
+$grey: #ccc;
+
+$one:$blue;
+$two:$blue2;
+$three:$blue3;
+
+@import 'base';
+@import 'header';
+@import 'home';
