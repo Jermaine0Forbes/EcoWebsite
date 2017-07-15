@@ -1,15 +1,20 @@
 $blue: #121E88;
-$blue2: #99CEF8;
+$blue2: #424CAE;
 $blue3: #B9E0F1;
+$blue4: #99CEF8;
+$blue5: #4B9EDD;
+$blue6: #0A70BF;
 $green: #4FC0A9;
 $white: #FEFAF7;
 $black: #333333;
 $grey: #ccc;
+$lite-grey:#f2f2f2;
 
-$one:$blue;
-$two:$blue2;
-$three:$blue3;
+$primary:$blue5;
+$secondary:$blue6;
+$tertiary:$blue3;
 
 @import 'base';
 @import 'header';
+@import 'footer';
 @import 'home';

@@ -7,7 +7,7 @@ var home = require("../controllers/home");
 route.get("/", home.page);
 
 route.get('/400', function(req,res){
-    res.status(400).send();
+    res.status(400).send('You are in some shit');
 })
 
 

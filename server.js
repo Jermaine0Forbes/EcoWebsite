@@ -6,8 +6,8 @@ var jucks = require('nunjucks');
 var path = require('path');
 var app = express();
 var routes = require('./mvc/routes/routes');
-var ip = '10.132.101.140';
-var port = process.env.PORT || 8800;
+var ip = '10.132.38.98';
+var port = process.env.PORT || 3000;
 var views = path.join(__dirname,'mvc','views');
 
 jucks.configure(views,{
