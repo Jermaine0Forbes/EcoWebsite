@@ -6,9 +6,10 @@ var jucks = require('nunjucks');
 var path = require('path');
 var app = express();
 var routes = require('./mvc/routes/routes');
-var ip = '10.132.38.98';
-var port = process.env.PORT || 3000;
+var ip = '10.132.38.18';
+var port = process.env.PORT || 3001;
 var views = path.join(__dirname,'mvc','views');
+require('dotenv').config();
 
 jucks.configure(views,{
     throwOnUndefined:true,
@@ -33,7 +34,7 @@ app.use(function(req,res,next){
     next();
 });
 
-app.use(function(err,req,res){
+app.use(function(err,req,res,next){
       if(res.status(500)){
     	  var title = err;
         res.render('error/500',{errTitle:title});
@@ -48,4 +49,5 @@ app.use(function(err,req,res){
 app.listen(port, ip, function(){
     var n = process.env.NODE;
     console.log("node connected to "+port);
+    console.log("node environment is in "+n)
 })
