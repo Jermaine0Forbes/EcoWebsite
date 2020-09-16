@@ -1,11 +1,15 @@
 # SeaLife
 
-## Build Tools
+## Tech Stack
+- Node.js
+- Express
+- Angular
+- PostgreSQL
 - Webpack
 
 
-## Server-scripting Language
-- Node.js
+## Logs
 
-## Template Engine
-- Nunjucks
+### 9-15-20 
+- Installed angular
+
