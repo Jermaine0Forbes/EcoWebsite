@@ -11,14 +11,16 @@ import {
 
 export const slider =
   trigger('routeAnimations', [
-    transition('* => isLeft', slideTo('left') ),
-    transition('* => isRight', slideTo('right') ),
-    transition('isRight => *', slideTo('left') ),
-    transition('isLeft => *', slideTo('right') )
+    transition('* => *', slideTo('right') ),
+    // transition('* => isRight', slideTo('right') ),
+    // transition('* => isLeft', slideTo('left') ),
+    // transition('isRight => isRight', slideTo('right') ),
+    // transition('isRight => *', slideTo('left') ),
   ]);
 
 function slideTo(direction) {
   const optional = { optional: true };
+
   return [
     query(':enter, :leave', [
       style({
@@ -29,15 +31,15 @@ function slideTo(direction) {
       })
     ], optional),
     query(':enter', [
-      style({ [direction]: '-100%'})
-    ]),
+      style({ transform: 'translateX(-100%)'})
+    ],optional),
     group([
       query(':leave', [
-        animate('600ms ease', style({ [direction]: '100%'}))
+        animate('600ms ease', style({ transform: 'translateX(100%)'}))
       ], optional),
       query(':enter', [
-        animate('600ms ease', style({ [direction]: '0%'}))
-      ])
+        animate('600ms ease', style({ transform: 'translateX(0%)'}))
+      ],optional)
     ]),
     // Normalize the page style... Might not be necessary
 
