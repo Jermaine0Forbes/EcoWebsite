@@ -1,8 +1,8 @@
 <div class="main">
   <p>register</p>
-  <form class=""  method="post">
-    <input type="text" name="username" value="JohnBrown">
-    <input type="password" name="password" value="password">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <input type="text" name="username" formControlName="email" >
+    <input type="password" name="password" formControlName="password">
     <input type="submit"  value="Submit">
   </form>
 
