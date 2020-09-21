@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule,CanActivate } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PagesComponent } from './pages/pages.component';
@@ -10,15 +10,20 @@ import { NewsComponent } from './news/news.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthguardService as AuthGuard } from './service/authguard.service';
+import { RoleGuardService as RoleGuard } from './service/role-guard.service';
+
 const routes: Routes = [
   {path:"", component:HomeComponent},
-  {path:"pages", component:PagesComponent,data:{animation:"pages"} },
+  {path:"pages", component:PagesComponent, canActivate:[AuthGuard] ,data:{animation:"pages"} },
   {path:"services", component:ServicesComponent,data:{animation:"service"} },
   {path:"projects", component:ProjectsComponent,data:{animation:"project"} },
   {path:"news", component:NewsComponent, data:{animation:"news"}},
   {path:"contact", component:ContactComponent, data:{animation:"contact"}},
   {path:"login", component:LoginComponent, data:{animation:"login"}},
   {path:"register", component:RegisterComponent, data:{animation:"register"}},
+  {path:"dashboard", component:DashboardComponent, canActivate:[RoleGuard], data:{animation:"dashboard", expectedRole:"admin"}},
 ];
 
 @NgModule({

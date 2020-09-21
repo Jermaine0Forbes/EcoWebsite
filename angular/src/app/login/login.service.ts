@@ -11,25 +11,19 @@ export class LoginService {
 
   login(user:any) {
     const url = this.url+"/login";
-     this.http.get(url,user).subscribe(data => {
-       console.log(data)
+     this.http.post(url,user).subscribe(data => {
+       const token = JSON.stringify(data);
+      localStorage.setItem("access_token", token );
+      console.log(token)
      });
   }
   register(user:any) {
     const url = this.url+"/register";
-    const options = {
-      headers : new HttpHeaders({
-        "Content-Type" : "application/json"
-      }),
-      withCredentials: true,
-    }
-    const params = new HttpParams().set("username", user.username)
-    // console.log(url)
-    // console.log(params)
      this.http.post(url,user).subscribe(data => {
-       // localStorage.setItem("access_token", data);
-       var decoded = jwt_decode(data);
-       console.log(decoded)
+        const token = JSON.stringify(data);
+       localStorage.setItem("access_token", token );
+       // var decoded = jwt_decode(data);
+       console.log(token)
      });
      // this.http.post(url,{user},options).subscribe(data => {
      //   console.log(data)

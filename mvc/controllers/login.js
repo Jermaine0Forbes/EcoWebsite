@@ -14,9 +14,16 @@ function generateToken(user){
 }
 
 module.exports.page = (req, res) => {
-   const {username, password} = req.body;
-  if( username && password){
-    console.log("username: "+username+" ,password: "+password)
+   const {email, password} = req.body;
+    console.log(req.body)
+  if( email && password){
+    User.findOne({ where :{email: email, password:password}}).then(data => {
+
+      const token = generateToken(data)
+      // console.log(token)
+      res.status(201).json(token)
+    })
+    .catch(err => res.json(err))
   }else{
     res.status(401).json({msg:"login credentials failed"})
   }
