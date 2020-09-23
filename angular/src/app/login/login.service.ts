@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Router, ActivatedRoute } from '@angular/router';
 import jwt_decode from "jwt-decode";
 
 @Injectable({
@@ -7,13 +8,20 @@ import jwt_decode from "jwt-decode";
 })
 export class LoginService {
   private url:string = "http://sea.io/api";
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   login(user:any) {
     const url = this.url+"/login";
      this.http.post(url,user).subscribe(data => {
        const token = JSON.stringify(data);
+       const user = jwt_decode(data);
       localStorage.setItem("access_token", token );
+
+      if(user.role === "admin"){
+          this.router.navigateByUrl("/dashboard");
+      }
+
+
       console.log(token)
      });
   }

@@ -13,8 +13,11 @@
 
             <div class="social-links fluid-max-wide-2 pad-half padH flex-right-mobile">
                <div class="">
-                 <a routerLink="login">Login</a>|
+                 <a routerLink="login">Login</a>
+                  <span class="mx-1">|</span>
                  <a routerLink="register">Register</a>
+                 <span class="mx-1">|</span>
+                 <a (click)="onLogout()" href="#">Logout</a>
                </div>
                 <!-- <ul class="navbar-nav around">
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>

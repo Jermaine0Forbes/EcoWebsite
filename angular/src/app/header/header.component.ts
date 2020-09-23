@@ -12,4 +12,14 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onLogout(){
+    if(localStorage.getItem("access_token")){
+      localStorage.removeItem("access_token");
+      localStorage.clear();
+      console.log("logged out")
+    }else{
+      console.log("there is no token")
+    }
+
+  }
 }
