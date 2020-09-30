@@ -1,4 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+$blue: #121E88;
+$blue2: #424CAE;
+$blue3: #B9E0F1;
+$blue4: #99CEF8;
+$blue5: #4B9EDD;
+$blue6: #0A70BF;
+$green: #4FC0A9;
+$white: #FEFAF7;
+$black: #333333;
+$grey: #ccc;
+$lite-grey:#f2f2f2;
+
+$primary:$blue5;
+$secondary:$blue6;
+$tertiary:$blue3;
+
 $grey: grey;
 
 header{
@@ -6,14 +22,18 @@ header{
 }
 
 body{
-  background-color:$grey;
+  // background-color:$grey;
 }
 
-
-.main{
-  min-height:500px;
-  background-color:white;
-  width:1270px;
-  margin:auto;
-  padding:0 15px;
-}
+@import 'assets/scss/base';
+@import 'assets/scss/header';
+@import 'assets/scss/footer';
+@import 'assets/scss/home';
+//
+// .main{
+//   min-height:500px;
+//   background-color:white;
+//   width:1270px;
+//   margin:auto;
+//   padding:0 15px;
+// }

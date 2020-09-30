@@ -1,0 +1,15 @@
+/********************
+    BASE
+********************/
+
+body{
+    color:$black;
+}
+
+a{
+    color:$black;
+    transition:all 0.3s;
+    &:hover{
+        color:$primary;
+    }
+}

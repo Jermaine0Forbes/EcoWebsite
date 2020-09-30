@@ -10,6 +10,9 @@
 
 ## Logs
 
+### 9-29-20
+- Added the home page and styles into the angular app
+
 ### 9-22-20
 - Created logout functionality to delete access token 
 - Added redirection to dashboard  when logged in and had permission of admin

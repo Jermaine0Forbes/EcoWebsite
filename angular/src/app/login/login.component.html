@@ -1,9 +1,11 @@
-<div class="main">
-  <p>login</p>
-  <form (ngSubmit)="onSubmit()"  [formGroup]="form">
-    <input type="text" name="email" formControlName="email">
-    <input type="password" name="password" formControlName="password">
-    <input type="submit"  value="Submit">
-  </form>
+<main id="login">
+  <section class="container">
+    <p>login</p>
+    <form (ngSubmit)="onSubmit()"  [formGroup]="form">
+      <input type="text" name="email" formControlName="email">
+      <input type="password" name="password" formControlName="password">
+      <input type="submit"  value="Submit">
+    </form>
+  </section>
 
-</div>
+</main>
