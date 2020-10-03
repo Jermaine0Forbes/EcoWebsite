@@ -43,6 +43,13 @@
 
 #bottom-nav{
 
+    // position:sticky;
+    // top:0;
+
+    .main-nav{
+        height:100%;
+    }
+
     .navbar-nav{
 
         a{
@@ -58,14 +65,31 @@
         }
     }
 
-    .search-btn{
+    .search{
+        &-btn{
 
-        background:none;
-        border-style:none;
-        &:hover{
-            color:$primary;
-            cursor:pointer;
+            background:none;
+            border-style:none;
+            &:hover{
+                color:$primary;
+                cursor:pointer;
+            }
         }
+
+        &-container{
+            height:inherit;
+            align-items: center;
+            display:flex;
+        }  
+        
+    
+    }
+
+    .sticky{
+
+        position:fixed;
+        z-index:100;
+        top:0;
     }
 }
 

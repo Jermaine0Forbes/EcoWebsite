@@ -18,4 +18,36 @@
 <body>
   <app-root></app-root>
 </body>
+<script >
+  window.onload= () => {
+    const headerEl = document.querySelector('#app-header')
+  const sentinalEl = document.querySelector('#inter-header')
+
+  const handler = (entries) => {
+    console.log(entries)
+    // entries is an array of observed dom nodes
+    // we're only interested in the first one at [0]
+    // because that's our .sentinal node.
+    // Here observe whether or not that node is in the viewport
+    // if (entries[0].boundingClientRect.y > 159 ) {
+    //   headerEl.classList.add('sticky')
+    // } else {
+    //   headerEl.classList.remove('sticky')
+    // }
+
+    if (!entries[0].isIntersecting) {
+      headerEl.classList.add('sticky')
+    } else {
+      headerEl.classList.remove('sticky')
+    }
+  }
+
+  // create the observer
+  const observer = new window.IntersectionObserver(handler)
+  // give the observer some dom nodes to keep an eye on
+  observer.observe(sentinalEl)
+
+  };
+
+</script>
 </html>

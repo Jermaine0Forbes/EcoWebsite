@@ -10,6 +10,10 @@
 
 ## Logs
 
+### 10-3-20
+- Developed sticky header to main menu, now migrating changes to production
+site
+
 ### 9-29-20
 - Added the home page and styles into the angular app
 

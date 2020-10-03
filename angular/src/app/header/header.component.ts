@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
+  host: {'[id]' : "id"},
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  id:string = "app-header";
   constructor() { }
 
   ngOnInit(): void {
