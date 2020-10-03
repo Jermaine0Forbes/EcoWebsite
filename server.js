@@ -33,7 +33,7 @@ app.use(function(req,res,next){
     next();
 });
 
-app.use(function(err,req,res){
+app.use(function(err,req,res,next){
       if(res.status(500)){
     	  var title = err;
         res.render('error/500',{errTitle:title});
