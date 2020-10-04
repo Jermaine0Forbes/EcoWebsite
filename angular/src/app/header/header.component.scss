@@ -1,0 +1,13 @@
+:host {
+   display:block;
+   top:0;
+   transition:all 0.3s;
+   
+    &.sticky{
+        position:sticky;
+        transform:translateY(-60px);
+        top:0;
+        z-index:5;
+
+    }
+}

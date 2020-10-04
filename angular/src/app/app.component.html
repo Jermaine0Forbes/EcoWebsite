@@ -1,0 +1,6 @@
+<app-header></app-header>
+<div id="inter-header"></div>
+
+<div [@routeAnimations]="prepareRoute(outlet)" >
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>
