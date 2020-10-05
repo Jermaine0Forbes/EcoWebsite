@@ -1,9 +1,17 @@
-<div class="main">
-  <p>register</p>
-  <form (ngSubmit)="onSubmit()" [formGroup]="form">
-    <input type="text" name="username" formControlName="email" >
-    <input type="password" name="password" formControlName="password">
-    <input type="submit"  value="Submit">
-  </form>
+<main id="register">
+  <section class="container">
+    <p>register</p>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+      <input type="text" name="firstName" formControlName="firstName" placeholder="First Name" >
+      <input type="text" name="lastName" formControlName="lastName" placeholder="Last Name">
+      <input type="text" name="email" formControlName="email" placeholder="Email">
+      <input type="password" name="password" formControlName="password">
+      <input type="submit"  value="Submit">
+    </form>
 
-</div>
+
+  </section>
+
+ 
+
+</main>
